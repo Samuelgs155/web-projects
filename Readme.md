@@ -131,4 +131,4 @@ MIT License
 
 ## 👨‍💻 Author
 
-Your Name
+Samuel
