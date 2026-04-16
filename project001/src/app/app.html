@@ -1,0 +1,75 @@
+<h1 style="text-align:center;">
+  Welcome to {{ title }}!
+</h1>
+
+<hr/>
+
+<div>
+  <h1>Employee: {{ name }}</h1>
+  <p>Age: {{ age }}</p>
+  @if (age >= 18) {
+    <p>Adult</p>
+  } @else {
+    <p>Minor</p>
+  }
+</div>
+
+<hr/>
+
+<h1>Articles</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+  </tr>
+  @for (article of articles; track article.code) {
+    <tr>
+      <td>{{ article.code }}</td>
+      <td>{{ article.description }}</td>
+      <td>{{ article.price }}</td>
+    </tr>
+  }
+</table>
+
+<hr/>
+
+<h1>Show a random number</h1>
+@switch(generateRandomNumber()) {
+  @case (0) {
+    <p>Zero</p>
+  }
+  @case (1) {
+    <p>One</p>
+  }
+  @case (2) {
+    <p>Two</p>
+  }
+  @default {
+    <p>Other</p>
+  }
+} 
+
+<hr/>
+
+<div>
+  <h1>Counter: {{ counter }}</h1>
+  <button (click)="increaseCounter()">Increment +1</button>
+  <button (click)="decreaseCounter()">Decrement -1</button>
+</div>
+
+<hr/>
+
+<div>
+  <input type="button" value="John" (click)="setName21()"/>
+  <input type="button" value="Jane" (click)="setName22()"/>
+  <input type="text" [value]="name2" />
+</div>
+
+<hr/>
+<div style="text-align: center;">
+  <app-dice></app-dice>
+  <app-dice></app-dice>
+  <app-dice></app-dice>
+</div>
+
+<router-outlet />
