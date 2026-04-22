@@ -1,0 +1,19 @@
+<div style="text-align:center">
+  <app-dice></app-dice>
+  <app-dice></app-dice>
+  <app-dice></app-dice>  
+</div>
+
+<hr/>
+
+<div style="text-align:center">
+  <app-dice value2="{{value1}}"></app-dice>
+  <app-dice value2="{{value2}}"></app-dice>
+  <app-dice value2="{{value3}}"></app-dice>  
+</div>
+<hr>
+<button (click)="throwTheDice()">Throw the dice</button>
+<hr>
+<p>Result:{{result}}</p>
+
+<router-outlet />

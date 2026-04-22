@@ -1,0 +1,32 @@
+<!--
+<div>
+  <app-numeric-selector [minimum]="1" [maximum]="10" #selector1></app-numeric-selector>
+  <br>
+  <button (click)="selector1.increaseValue()">Increase</button>
+  <button (click)="selector1.decreaseValue()">Decrease</button>
+  <button (click)="selector1.setValue(10)">Set value to 10</button>
+  <hr>
+  <br>
+  <app-numeric-selector [minimum]="1" [maximum]="10" #selector2></app-numeric-selector>
+  <br>
+  <button (click)="selector2.increaseValue()">Increase</button>
+  <button (click)="selector2.decreaseValue()">Decrease</button>
+  <button (click)="selector2.setValue(10)">Set value to 10</button>
+</div>
+-->
+
+<div>
+  <app-numeric-selector [minimum]="1" [maximum]="10" #selector1></app-numeric-selector>
+  <br>  
+  <button (click)="setSelector1Value(1)">Set to 1</button><br>
+  <button (click)="setSelector1Value(5)">Set to 5</button><br>
+  <button (click)="setSelector1Value(10)">Set to 10</button>
+  <hr>
+  <app-numeric-selector [minimum]="1" [maximum]="10" #selector2></app-numeric-selector>  
+  <br>
+  <button (click)="setSelector2Value(1)">Set to 1</button><br>
+  <button (click)="setSelector2Value(5)">Set to 5</button><br>
+  <button (click)="setSelector2Value(10)">Set to 10</button>  
+</div>
+
+<router-outlet />
