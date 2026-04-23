@@ -1,0 +1,24 @@
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Columns styles */
+th, td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* row styles */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* header */
+th {
+  background-color: #4CAF50;
+  color: white;
+}

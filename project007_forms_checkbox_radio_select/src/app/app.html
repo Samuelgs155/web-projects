@@ -1,0 +1,33 @@
+<form [formGroup]="conversionForm" (ngSubmit)="submit()">
+  <p>Enter decimal number:
+    <input type="text" formControlName="decimalNumber">
+  </p>
+
+  <p>Convert to:<br>
+    <input type="radio" formControlName="base" value="octal">Octal
+    <input type="radio" formControlName="base" value="hexadecimal">Hexadecimal
+  </p>
+
+  <p>Raise to:<br>
+    <select formControlName="power">
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </p>
+
+  <p>
+    <input type="checkbox" formControlName="length">
+    Show number of digits
+  </p>
+
+  <p><button type="submit">Confirm</button></p>
+</form>
+
+<div>
+  <p>Conversion: {{conversion}}</p>
+  <p>Power: {{poweredNumber}}</p>
+  <p>Number of digits: {{quantity}}</p>
+</div>
+
+<router-outlet />

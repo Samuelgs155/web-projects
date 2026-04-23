@@ -1,0 +1,55 @@
+<!-- >
+<div>
+  <p>Name<input type="text" [(ngModel)]="name"></p>
+  <p>Surname= <input type="text" [(ngModel)]="surname"></p>  
+  <p>Full name:{{name}},{{surname}}</p>
+</div>
+<router-outlet />
+-->
+<div>
+  <h1>Article Admin</h1>
+  @if (thereAreArticles()) {
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Remove</th>
+        <th>Select</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(art of articles; track article.code) {
+      <tr>
+        <td>{{art.code}}</td>
+        <td>{{art.description}}</td>
+        <td>{{art.price}}</td>
+        <td><button (click)="removeAnArticle(art.code)">Remove?</button></td>
+        <td><button (click)="selectArticle(art)">Select?</button></td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  } @else {
+  <p>There are any articles.</p>
+  }
+
+  <div>
+    <p>
+      Code:<input type="number" [(ngModel)]="article.code" />
+    </p>
+    <p>
+      description:<input type="text" [(ngModel)]="article.description" />
+    </p>
+    <p>
+      price:<input type="number" [(ngModel)]="article.price" />
+    </p>
+    <p>
+      <button (click)="addAnArticle()">Add</button>
+      <button (click)="updateArticle()">update</button>
+    </p>
+  </div>
+</div>
+
+<router-outlet />

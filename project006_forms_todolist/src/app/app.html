@@ -1,0 +1,14 @@
+<p>Task:
+  <input type="text" [formControl]="task">
+</p>
+<p><button (click)="add()">Add</button></p>
+<ol>
+  @for(item of list; track $index) {
+  <li>
+    {{item}} <a (click)="delete($index)" href="#">Delete?</a>
+  </li>
+  }
+</ol>
+<p><button (click)="deleteAll()">Delete all tasks</button></p>
+
+<router-outlet />
