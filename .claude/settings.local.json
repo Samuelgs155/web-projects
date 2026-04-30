@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(gh repo *)",
+      "Bash(where gh *)",
+      "Bash(winget install *)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "Bash(gh pr create --repo Samuelgs155/web-projects --head p-canales:Pablo --base main --title 'Add project_13: Angular app with articles and web articles' --body ' *)"
+    ]
+  }
+}

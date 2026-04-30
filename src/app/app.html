@@ -1,0 +1,27 @@
+<table>
+  @for(article of articles;track $index) {
+    <tr>
+      <td>{{article.code}}</td>
+      <td>{{article.description}}</td>
+      <td>{{article.price}}</td>
+    </tr>
+  }
+</table>
+
+<hr>
+<table>
+  <tr>
+    <td>Code</td><td>Description</td><td>Price</td>
+  </tr>
+  @for(art of webArticles;track art.id) {
+    <tr>
+      <td>{{art.id}}</td>
+      <td>{{art.postId}}</td>
+      <td>{{art.name}}</td>
+      <td>{{art.email}}</td>
+      <td>{{art.body}}</td>
+    </tr>
+  }
+</table>
+
+<router-outlet />
