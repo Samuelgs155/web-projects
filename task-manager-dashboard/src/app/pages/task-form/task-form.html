@@ -1,0 +1,32 @@
+<section class="container py-5">
+  <div class="card shadow">
+    <div class="card-body">
+      <h1>Create or Edit Task</h1>
+
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input class="form-control" [(ngModel)]="task.title" name="title">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea class="form-control" [(ngModel)]="task.description" name="description"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Status</label>
+          <select class="form-select" [(ngModel)]="task.status" name="status">
+            <option>pending</option>
+            <option>in progress</option>
+            <option>completed</option>
+          </select>
+        </div>
+
+        <button class="btn btn-success" type="button" (click)="saveTask()">
+          Save Task
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
