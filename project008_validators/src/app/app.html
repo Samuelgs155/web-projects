@@ -1,0 +1,45 @@
+<form [formGroup]="contactForm" (ngSubmit)="submit()">
+
+  <p>Name:
+    <input type="text" formControlName="name">
+
+    @if(this.contactForm.get('name')?.errors?.['required']) {
+      <span>(The name cannot be empty)</span>
+    }
+
+    @if(this.contactForm.get('name')?.errors?.['minlength']) {
+      <span>(It must contain at least 10 characters)</span>
+    }
+  </p>
+
+  <p>Email:
+    <input type="text" formControlName="email">
+
+    @if(this.contactForm.get('email')?.errors?.['required']) {
+      <span>(Email cannot be empty)</span>
+    }
+
+    @if(this.contactForm.get('email')?.errors?.['email']) {
+      <span>(The email is not valid)</span>
+    }
+  </p>
+
+  <p>Message<br>
+    <textarea rows="10" cols="70" formControlName="message"></textarea>
+  </p>
+
+  @if(this.contactForm.get('message')?.errors?.['required']) {
+    <div>(The message cannot be empty)</div>
+  }
+
+  @if(this.contactForm.get('message')?.errors?.['maxlength']) {
+    <div>(It must contain a maximum of 500 characters)</div>
+  }
+
+  <button type="submit">Confirm</button>
+
+</form>
+
+<div>{{result}}</div>
+
+<router-outlet />
